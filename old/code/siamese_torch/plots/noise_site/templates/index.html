@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noise Test</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        img {
+            border: 2px solid white;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+        img:hover {
+            transform: scale(1.02);
+        }
+        img:active {
+            transform: scale(0.98);
+        }
+        .coordinates {
+            font-family: monospace;
+            text-align: center;
+            min-height: 20px;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .error {
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img id="image1" src="/image1" alt="Image 1" data-image-id="image1">
+        <div id="coords1" class="coordinates">Click image to generate noise</div>
+    </div>
+    <div class="image-container">
+        <img id="image2" src="/image2" alt="Image 2" data-image-id="image2">
+        <div id="coords2" class="coordinates">Click image to generate noise</div>
+    </div>
+    <div class="image-container">
+        <img id="image3" src="/image3" alt="Image 3" data-image-id="image3">
+        <div id="coords3" class="coordinates">Click image to generate noise</div>
+    </div>
+
+    <script>
+        async function updateImageAndCoordinates(imageElement) {
+            const timestamp = new Date().getTime();
+            const imageId = imageElement.getAttribute('data-image-id');
+            const coordsElement = document.getElementById(`coords${imageId.slice(-1)}`);
+            
+            // Show loading state
+            coordsElement.textContent = 'Updating...';
+            coordsElement.classList.remove('error');
+            
+            try {
+                // First check if we can get coordinates
+                const coordResponse = await fetch(`/coordinates/${imageId}?time=${timestamp}`);
+                if (!coordResponse.ok) {
+                    throw new Error(`HTTP error! status: ${coordResponse.status}`);
+                }
+                const coordinates = await coordResponse.json();
+                
+                // If coordinates were successful, update the image
+                imageElement.src = `/${imageId}?time=${timestamp}`;
+                
+                // Update coordinates display
+                coordsElement.textContent = `x1: ${coordinates.x1}, y1: ${coordinates.y1}, x2: ${coordinates.x2}, y2: ${coordinates.y2}`;
+                
+            } catch (error) {
+                console.error('Error updating image and coordinates:', error);
+                coordsElement.textContent = 'Error updating - try again';
+                coordsElement.classList.add('error');
+            }
+        }
+
+        // Add click handlers to all images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('click', () => updateImageAndCoordinates(img));
+        });
+    </script>
+</body>
+</html>

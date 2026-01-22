@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Display</title>
+    <style>
+        .image-container {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            cursor: pointer;
+            vertical-align: top;
+        }
+        .coordinates {
+            margin-top: 10px;
+            font-family: monospace;
+            line-height: 1.4;
+            white-space: pre-line;
+        }
+        .image-wrapper {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+        }
+        .image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+        }
+        .base-image {
+            z-index: 1;
+        }
+        .overlay-image {
+            z-index: 2;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function updateCoordinates(imageId) {
+            fetch(`/coordinates/${imageId}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById(`coords-${imageId}`).textContent = 
+                        `x1: ${data.x1}, y1: ${data.y1}\nx2: ${data.x2}, y2: ${data.y2}`;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function refreshImage(imageNum) {
+            const img = document.getElementById(`image${imageNum}`);
+            const timestamp = new Date().getTime();
+            img.src = `/image${imageNum}?t=${timestamp}`;
+            updateCoordinates(`image${imageNum}`);
+        }
+
+        function refreshAll() {
+            for (let i = 1; i <= 10; i++) {
+                refreshImage(i);
+            }
+        }
+
+        // Update every 2 seconds
+        // setInterval(refreshAll, 2000);
+        
+        // Initial load
+        window.onload = refreshAll;
+    </script>
+</head>
+<body>
+    <h1>Random Rectangle Positions</h1>
+    <button onclick="refreshAll()">Refresh All Images</button>
+    
+    <div class="grid-container">
+        {% for i in range(1, 11) %}
+        <div class="image-container" onclick="refreshImage({ i })">
+            <h3>Image {{ i }}</h3>
+            <div class="image-wrapper">
+                <img class="base-image" src="im.png" alt="Background">
+                <img id="image{{ i }}" class="overlay-image" src="/image{{ i }}" alt="Image {{ i }}">
+            </div>
+            <div id="coords-image{{ i }}" class="coordinates">Loading coordinates...</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

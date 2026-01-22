@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mri-gist"
+version = "0.1.0"
+description = "Comprehensive MRI processing and visualization toolkit"
+authors = [{name = "Arnaud Gucciardi", email = "arnaud.gucciard@toelt.ai"}]
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+keywords = ["mri", "neuroimaging", "brain", "registration", "segmentation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "click>=8.0",
+    "nibabel>=4.0",
+    "antspyx>=0.3",
+    "pynrrd>=1.0",
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "pandas>=1.3",
+    "rich>=12.0",
+    "tqdm>=4.60",
+    "pyyaml>=6.0",
+    "fastapi>=0.68.0",
+    "uvicorn>=0.15.0",
+    "python-multipart>=0.0.5",
+    "jinja2>=3.0.0",
+    "psutil>=5.9.0",
+    "SimpleITK>=2.0",
+]
+
+[project.scripts]
+mri-gist = "mri_gist.cli:cli" # mri-gist runs cli()
+
+[project.urls]
+Homepage = "https://github.com/a-gucciardi/mri_gist"
+Repository = "https://github.com/a-gucciardi/mri_gist"
+
+[tool.setuptools]
+packages = ["mri_gist"]

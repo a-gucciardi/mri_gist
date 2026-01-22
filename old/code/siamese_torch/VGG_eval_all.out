@@ -1,0 +1,1849 @@
+2024-11-19 12:01:43.482746: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-11-19 12:01:43.493441: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1732014103.506306  165386 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1732014103.510239  165386 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-11-19 12:01:43.523233: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+Training with noise size 0
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Training VGGNet
+Training on fold 1
+Epoch 1 Batch 10	 20.0%	 Loss 0.690680	 Train Accuracy 56.25
+Epoch 1 Batch 20	 42.2%	 Loss 0.747464	 Train Accuracy 40.625
+Epoch 1 Batch 30	 64.4%	 Loss 0.596840	 Train Accuracy 68.75
+Epoch 1 Batch 40	 86.7%	 Loss 0.699287	 Train Accuracy 40.625
+Epoch 2 Batch 10	 20.0%	 Loss 0.667796	 Train Accuracy 68.75
+Epoch 2 Batch 20	 42.2%	 Loss 0.684649	 Train Accuracy 43.75
+Epoch 2 Batch 30	 64.4%	 Loss 0.584173	 Train Accuracy 84.375
+Epoch 2 Batch 40	 86.7%	 Loss 0.658351	 Train Accuracy 68.75
+Epoch 3 Batch 10	 20.0%	 Loss 0.634745	 Train Accuracy 71.875
+Epoch 3 Batch 20	 42.2%	 Loss 0.643700	 Train Accuracy 56.25
+Epoch 3 Batch 30	 64.4%	 Loss 0.533351	 Train Accuracy 90.625
+Epoch 3 Batch 40	 86.7%	 Loss 0.632126	 Train Accuracy 78.125
+Epoch 4 Batch 10	 20.0%	 Loss 0.591650	 Train Accuracy 75.0
+Epoch 4 Batch 20	 42.2%	 Loss 0.583602	 Train Accuracy 71.875
+Epoch 4 Batch 30	 64.4%	 Loss 0.497453	 Train Accuracy 96.875
+Epoch 4 Batch 40	 86.7%	 Loss 0.594858	 Train Accuracy 87.5
+Epoch 5 Batch 10	 20.0%	 Loss 0.561614	 Train Accuracy 75.0
+Epoch 5 Batch 20	 42.2%	 Loss 0.544590	 Train Accuracy 81.25
+Epoch 5 Batch 30	 64.4%	 Loss 0.468604	 Train Accuracy 93.75
+Epoch 5 Batch 40	 86.7%	 Loss 0.556580	 Train Accuracy 84.375
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train0_fold1.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Training on fold 2
+Epoch 1 Batch 10	 20.0%	 Loss 0.786129	 Train Accuracy 50.0
+Epoch 1 Batch 20	 42.2%	 Loss 0.867423	 Train Accuracy 50.0
+Epoch 1 Batch 30	 64.4%	 Loss 0.677937	 Train Accuracy 59.375
+Epoch 1 Batch 40	 86.7%	 Loss 0.684690	 Train Accuracy 50.0
+Epoch 2 Batch 10	 20.0%	 Loss 0.683656	 Train Accuracy 50.0
+Epoch 2 Batch 20	 42.2%	 Loss 0.752828	 Train Accuracy 50.0
+Epoch 2 Batch 30	 64.4%	 Loss 0.599594	 Train Accuracy 68.75
+Epoch 2 Batch 40	 86.7%	 Loss 0.625874	 Train Accuracy 68.75
+Epoch 3 Batch 10	 20.0%	 Loss 0.666908	 Train Accuracy 56.25
+Epoch 3 Batch 20	 42.2%	 Loss 0.691465	 Train Accuracy 50.0
+Epoch 3 Batch 30	 64.4%	 Loss 0.574315	 Train Accuracy 68.75
+Epoch 3 Batch 40	 86.7%	 Loss 0.627789	 Train Accuracy 59.375
+Epoch 4 Batch 10	 20.0%	 Loss 0.606767	 Train Accuracy 65.625
+Epoch 4 Batch 20	 42.2%	 Loss 0.637329	 Train Accuracy 56.25
+Epoch 4 Batch 30	 64.4%	 Loss 0.485008	 Train Accuracy 71.875
+Epoch 4 Batch 40	 86.7%	 Loss 0.573725	 Train Accuracy 68.75
+Epoch 5 Batch 10	 20.0%	 Loss 0.555352	 Train Accuracy 68.75
+Epoch 5 Batch 20	 42.2%	 Loss 0.583356	 Train Accuracy 59.375
+Epoch 5 Batch 30	 64.4%	 Loss 0.420871	 Train Accuracy 78.125
+Epoch 5 Batch 40	 86.7%	 Loss 0.519444	 Train Accuracy 81.25
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train0_fold2.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Results for model trained with noise size 0:
+
+Evaluation noise size 0:
+Test Loss: 7.2689
+Test Accuracy: 0.5538
+Test Precision: 0.5721
+Test Recall: 0.6429
+Test F1 Score: 0.6013
+
+Evaluation noise size 1:
+Test Loss: 7.2605
+Test Accuracy: 0.5475
+Test Precision: 0.5677
+Test Recall: 0.6310
+Test F1 Score: 0.5938
+
+Evaluation noise size 2:
+Test Loss: 7.2444
+Test Accuracy: 0.5522
+Test Precision: 0.5699
+Test Recall: 0.6399
+Test F1 Score: 0.5981
+
+Evaluation noise size 3:
+Test Loss: 7.1733
+Test Accuracy: 0.5649
+Test Precision: 0.5808
+Test Recall: 0.6637
+Test F1 Score: 0.6161
+
+Evaluation noise size 4:
+Test Loss: 7.1825
+Test Accuracy: 0.5506
+Test Precision: 0.5704
+Test Recall: 0.6369
+Test F1 Score: 0.5982
+
+Evaluation noise size 5:
+Test Loss: 7.0923
+Test Accuracy: 0.5617
+Test Precision: 0.5783
+Test Recall: 0.6577
+Test F1 Score: 0.6118
+
+Evaluation noise size 6:
+Test Loss: 7.1360
+Test Accuracy: 0.5585
+Test Precision: 0.5753
+Test Recall: 0.6518
+Test F1 Score: 0.6070
+
+Evaluation noise size 7:
+Test Loss: 7.0948
+Test Accuracy: 0.5633
+Test Precision: 0.5801
+Test Recall: 0.6607
+Test F1 Score: 0.6147
+
+Evaluation noise size 8:
+Test Loss: 7.0858
+Test Accuracy: 0.5601
+Test Precision: 0.5773
+Test Recall: 0.6548
+Test F1 Score: 0.6100
+
+Evaluation noise size 9:
+Test Loss: 7.1543
+Test Accuracy: 0.5554
+Test Precision: 0.5737
+Test Recall: 0.6458
+Test F1 Score: 0.6040
+
+Training with noise size 1
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Training VGGNet
+Training on fold 1
+Epoch 1 Batch 10	 20.0%	 Loss 0.666336	 Train Accuracy 53.125
+Epoch 1 Batch 20	 42.2%	 Loss 0.742970	 Train Accuracy 37.5
+Epoch 1 Batch 30	 64.4%	 Loss 0.579183	 Train Accuracy 71.875
+Epoch 1 Batch 40	 86.7%	 Loss 0.698794	 Train Accuracy 50.0
+Epoch 2 Batch 10	 20.0%	 Loss 0.656218	 Train Accuracy 56.25
+Epoch 2 Batch 20	 42.2%	 Loss 0.681342	 Train Accuracy 50.0
+Epoch 2 Batch 30	 64.4%	 Loss 0.568732	 Train Accuracy 75.0
+Epoch 2 Batch 40	 86.7%	 Loss 0.671882	 Train Accuracy 50.0
+Epoch 3 Batch 10	 20.0%	 Loss 0.635009	 Train Accuracy 62.5
+Epoch 3 Batch 20	 42.2%	 Loss 0.641878	 Train Accuracy 65.625
+Epoch 3 Batch 30	 64.4%	 Loss 0.525654	 Train Accuracy 81.25
+Epoch 3 Batch 40	 86.7%	 Loss 0.641686	 Train Accuracy 62.5
+Epoch 4 Batch 10	 20.0%	 Loss 0.603803	 Train Accuracy 68.75
+Epoch 4 Batch 20	 42.2%	 Loss 0.591049	 Train Accuracy 78.125
+Epoch 4 Batch 30	 64.4%	 Loss 0.479857	 Train Accuracy 87.5
+Epoch 4 Batch 40	 86.7%	 Loss 0.578472	 Train Accuracy 84.375
+Epoch 5 Batch 10	 20.0%	 Loss 0.570476	 Train Accuracy 68.75
+Epoch 5 Batch 20	 42.2%	 Loss 0.542901	 Train Accuracy 84.375
+Epoch 5 Batch 30	 64.4%	 Loss 0.446134	 Train Accuracy 90.625
+Epoch 5 Batch 40	 86.7%	 Loss 0.525516	 Train Accuracy 84.375
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train1_fold1.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Training on fold 2
+Epoch 1 Batch 10	 20.0%	 Loss 0.744942	 Train Accuracy 50.0
+Epoch 1 Batch 20	 42.2%	 Loss 0.756930	 Train Accuracy 50.0
+Epoch 1 Batch 30	 64.4%	 Loss 0.658522	 Train Accuracy 62.5
+Epoch 1 Batch 40	 86.7%	 Loss 0.689431	 Train Accuracy 46.875
+Epoch 2 Batch 10	 20.0%	 Loss 0.692607	 Train Accuracy 50.0
+Epoch 2 Batch 20	 42.2%	 Loss 0.698418	 Train Accuracy 56.25
+Epoch 2 Batch 30	 64.4%	 Loss 0.614463	 Train Accuracy 68.75
+Epoch 2 Batch 40	 86.7%	 Loss 0.656491	 Train Accuracy 65.625
+Epoch 3 Batch 10	 20.0%	 Loss 0.651542	 Train Accuracy 65.625
+Epoch 3 Batch 20	 42.2%	 Loss 0.674813	 Train Accuracy 59.375
+Epoch 3 Batch 30	 64.4%	 Loss 0.561232	 Train Accuracy 81.25
+Epoch 3 Batch 40	 86.7%	 Loss 0.625572	 Train Accuracy 81.25
+Epoch 4 Batch 10	 20.0%	 Loss 0.604848	 Train Accuracy 62.5
+Epoch 4 Batch 20	 42.2%	 Loss 0.658690	 Train Accuracy 59.375
+Epoch 4 Batch 30	 64.4%	 Loss 0.507594	 Train Accuracy 84.375
+Epoch 4 Batch 40	 86.7%	 Loss 0.574463	 Train Accuracy 87.5
+Epoch 5 Batch 10	 20.0%	 Loss 0.566795	 Train Accuracy 71.875
+Epoch 5 Batch 20	 42.2%	 Loss 0.639553	 Train Accuracy 56.25
+Epoch 5 Batch 30	 64.4%	 Loss 0.466758	 Train Accuracy 87.5
+Epoch 5 Batch 40	 86.7%	 Loss 0.527894	 Train Accuracy 90.625
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train1_fold2.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Results for model trained with noise size 1:
+
+Evaluation noise size 0:
+Test Loss: 7.2629
+Test Accuracy: 0.5000
+Test Precision: 0.5300
+Test Recall: 0.4792
+Test F1 Score: 0.5015
+
+Evaluation noise size 1:
+Test Loss: 7.2300
+Test Accuracy: 0.5079
+Test Precision: 0.5385
+Test Recall: 0.4940
+Test F1 Score: 0.5139
+
+Evaluation noise size 2:
+Test Loss: 7.0765
+Test Accuracy: 0.5127
+Test Precision: 0.5428
+Test Recall: 0.5030
+Test F1 Score: 0.5206
+
+Evaluation noise size 3:
+Test Loss: 7.1430
+Test Accuracy: 0.5174
+Test Precision: 0.5483
+Test Recall: 0.5119
+Test F1 Score: 0.5283
+
+Evaluation noise size 4:
+Test Loss: 7.1200
+Test Accuracy: 0.5190
+Test Precision: 0.5483
+Test Recall: 0.5149
+Test F1 Score: 0.5293
+
+Evaluation noise size 5:
+Test Loss: 7.0595
+Test Accuracy: 0.5222
+Test Precision: 0.5531
+Test Recall: 0.5208
+Test F1 Score: 0.5356
+
+Evaluation noise size 6:
+Test Loss: 7.0359
+Test Accuracy: 0.5301
+Test Precision: 0.5607
+Test Recall: 0.5357
+Test F1 Score: 0.5473
+
+Evaluation noise size 7:
+Test Loss: 7.0843
+Test Accuracy: 0.5237
+Test Precision: 0.5541
+Test Recall: 0.5238
+Test F1 Score: 0.5374
+
+Evaluation noise size 8:
+Test Loss: 7.0945
+Test Accuracy: 0.5095
+Test Precision: 0.5411
+Test Recall: 0.4970
+Test F1 Score: 0.5170
+
+Evaluation noise size 9:
+Test Loss: 7.1032
+Test Accuracy: 0.5111
+Test Precision: 0.5420
+Test Recall: 0.5000
+Test F1 Score: 0.5189
+
+Training with noise size 2
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Training VGGNet
+Training on fold 1
+Epoch 1 Batch 10	 20.0%	 Loss 0.679315	 Train Accuracy 56.25
+Epoch 1 Batch 20	 42.2%	 Loss 0.758279	 Train Accuracy 40.625
+Epoch 1 Batch 30	 64.4%	 Loss 0.569706	 Train Accuracy 68.75
+Epoch 1 Batch 40	 86.7%	 Loss 0.705394	 Train Accuracy 34.375
+Epoch 2 Batch 10	 20.0%	 Loss 0.658863	 Train Accuracy 56.25
+Epoch 2 Batch 20	 42.2%	 Loss 0.672521	 Train Accuracy 59.375
+Epoch 2 Batch 30	 64.4%	 Loss 0.539246	 Train Accuracy 81.25
+Epoch 2 Batch 40	 86.7%	 Loss 0.690550	 Train Accuracy 40.625
+Epoch 3 Batch 10	 20.0%	 Loss 0.621306	 Train Accuracy 62.5
+Epoch 3 Batch 20	 42.2%	 Loss 0.638560	 Train Accuracy 68.75
+Epoch 3 Batch 30	 64.4%	 Loss 0.449757	 Train Accuracy 84.375
+Epoch 3 Batch 40	 86.7%	 Loss 0.650191	 Train Accuracy 65.625
+Epoch 4 Batch 10	 20.0%	 Loss 0.577191	 Train Accuracy 68.75
+Epoch 4 Batch 20	 42.2%	 Loss 0.581791	 Train Accuracy 71.875
+Epoch 4 Batch 30	 64.4%	 Loss 0.371709	 Train Accuracy 96.875
+Epoch 4 Batch 40	 86.7%	 Loss 0.602821	 Train Accuracy 71.875
+Epoch 5 Batch 10	 20.0%	 Loss 0.512860	 Train Accuracy 71.875
+Epoch 5 Batch 20	 42.2%	 Loss 0.536385	 Train Accuracy 75.0
+Epoch 5 Batch 30	 64.4%	 Loss 0.319349	 Train Accuracy 93.75
+Epoch 5 Batch 40	 86.7%	 Loss 0.574777	 Train Accuracy 75.0
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train2_fold1.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Training on fold 2
+Epoch 1 Batch 10	 20.0%	 Loss 0.736746	 Train Accuracy 46.875
+Epoch 1 Batch 20	 42.2%	 Loss 0.813886	 Train Accuracy 50.0
+Epoch 1 Batch 30	 64.4%	 Loss 0.621309	 Train Accuracy 65.625
+Epoch 1 Batch 40	 86.7%	 Loss 0.649374	 Train Accuracy 59.375
+Epoch 2 Batch 10	 20.0%	 Loss 0.629913	 Train Accuracy 53.125
+Epoch 2 Batch 20	 42.2%	 Loss 0.695476	 Train Accuracy 59.375
+Epoch 2 Batch 30	 64.4%	 Loss 0.483930	 Train Accuracy 81.25
+Epoch 2 Batch 40	 86.7%	 Loss 0.555997	 Train Accuracy 68.75
+Epoch 3 Batch 10	 20.0%	 Loss 0.569169	 Train Accuracy 62.5
+Epoch 3 Batch 20	 42.2%	 Loss 0.539291	 Train Accuracy 71.875
+Epoch 3 Batch 30	 64.4%	 Loss 0.343553	 Train Accuracy 84.375
+Epoch 3 Batch 40	 86.7%	 Loss 0.330111	 Train Accuracy 87.5
+Epoch 4 Batch 10	 20.0%	 Loss 0.448771	 Train Accuracy 78.125
+Epoch 4 Batch 20	 42.2%	 Loss 0.389656	 Train Accuracy 81.25
+Epoch 4 Batch 30	 64.4%	 Loss 0.259250	 Train Accuracy 84.375
+Epoch 4 Batch 40	 86.7%	 Loss 0.244082	 Train Accuracy 96.875
+Epoch 5 Batch 10	 20.0%	 Loss 0.355615	 Train Accuracy 81.25
+Epoch 5 Batch 20	 42.2%	 Loss 0.299870	 Train Accuracy 84.375
+Epoch 5 Batch 30	 64.4%	 Loss 0.174748	 Train Accuracy 96.875
+Epoch 5 Batch 40	 86.7%	 Loss 0.184549	 Train Accuracy 93.75
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train2_fold2.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Results for model trained with noise size 2:
+
+Evaluation noise size 0:
+Test Loss: 8.8938
+Test Accuracy: 0.5111
+Test Precision: 0.5459
+Test Recall: 0.4970
+Test F1 Score: 0.4888
+
+Evaluation noise size 1:
+Test Loss: 7.1472
+Test Accuracy: 0.5949
+Test Precision: 0.6349
+Test Recall: 0.6548
+Test F1 Score: 0.6295
+
+Evaluation noise size 2:
+Test Loss: 5.9770
+Test Accuracy: 0.6677
+Test Precision: 0.6751
+Test Recall: 0.7917
+Test F1 Score: 0.7224
+
+Evaluation noise size 3:
+Test Loss: 5.8728
+Test Accuracy: 0.6772
+Test Precision: 0.6797
+Test Recall: 0.8095
+Test F1 Score: 0.7327
+
+Evaluation noise size 4:
+Test Loss: 5.8471
+Test Accuracy: 0.6741
+Test Precision: 0.6789
+Test Recall: 0.8036
+Test F1 Score: 0.7285
+
+Evaluation noise size 5:
+Test Loss: 5.7229
+Test Accuracy: 0.6820
+Test Precision: 0.6821
+Test Recall: 0.8185
+Test F1 Score: 0.7377
+
+Evaluation noise size 6:
+Test Loss: 5.8749
+Test Accuracy: 0.6772
+Test Precision: 0.6812
+Test Recall: 0.8095
+Test F1 Score: 0.7304
+
+Evaluation noise size 7:
+Test Loss: 5.8974
+Test Accuracy: 0.6677
+Test Precision: 0.6764
+Test Recall: 0.7917
+Test F1 Score: 0.7204
+
+Evaluation noise size 8:
+Test Loss: 6.0341
+Test Accuracy: 0.6772
+Test Precision: 0.6815
+Test Recall: 0.8095
+Test F1 Score: 0.7284
+
+Evaluation noise size 9:
+Test Loss: 6.1903
+Test Accuracy: 0.6661
+Test Precision: 0.6760
+Test Recall: 0.7887
+Test F1 Score: 0.7169
+
+Training with noise size 3
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Training VGGNet
+Training on fold 1
+Epoch 1 Batch 10	 20.0%	 Loss 0.719986	 Train Accuracy 59.375
+Epoch 1 Batch 20	 42.2%	 Loss 0.871576	 Train Accuracy 37.5
+Epoch 1 Batch 30	 64.4%	 Loss 0.608485	 Train Accuracy 65.625
+Epoch 1 Batch 40	 86.7%	 Loss 0.734305	 Train Accuracy 37.5
+Epoch 2 Batch 10	 20.0%	 Loss 0.596563	 Train Accuracy 78.125
+Epoch 2 Batch 20	 42.2%	 Loss 0.684784	 Train Accuracy 53.125
+Epoch 2 Batch 30	 64.4%	 Loss 0.482565	 Train Accuracy 75.0
+Epoch 2 Batch 40	 86.7%	 Loss 0.625233	 Train Accuracy 75.0
+Epoch 3 Batch 10	 20.0%	 Loss 0.516772	 Train Accuracy 81.25
+Epoch 3 Batch 20	 42.2%	 Loss 0.443191	 Train Accuracy 87.5
+Epoch 3 Batch 30	 64.4%	 Loss 0.342915	 Train Accuracy 93.75
+Epoch 3 Batch 40	 86.7%	 Loss 0.517096	 Train Accuracy 84.375
+Epoch 4 Batch 10	 20.0%	 Loss 0.416230	 Train Accuracy 84.375
+Epoch 4 Batch 20	 42.2%	 Loss 0.314788	 Train Accuracy 90.625
+Epoch 4 Batch 30	 64.4%	 Loss 0.213068	 Train Accuracy 100.0
+Epoch 4 Batch 40	 86.7%	 Loss 0.369122	 Train Accuracy 87.5
+Epoch 5 Batch 10	 20.0%	 Loss 0.297498	 Train Accuracy 90.625
+Epoch 5 Batch 20	 42.2%	 Loss 0.214529	 Train Accuracy 100.0
+Epoch 5 Batch 30	 64.4%	 Loss 0.169828	 Train Accuracy 96.875
+Epoch 5 Batch 40	 86.7%	 Loss 0.362478	 Train Accuracy 84.375
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train3_fold1.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Training on fold 2
+Epoch 1 Batch 10	 20.0%	 Loss 1.081384	 Train Accuracy 50.0
+Epoch 1 Batch 20	 42.2%	 Loss 0.916964	 Train Accuracy 50.0
+Epoch 1 Batch 30	 64.4%	 Loss 0.644402	 Train Accuracy 62.5
+Epoch 1 Batch 40	 86.7%	 Loss 0.689996	 Train Accuracy 50.0
+Epoch 2 Batch 10	 20.0%	 Loss 0.682123	 Train Accuracy 56.25
+Epoch 2 Batch 20	 42.2%	 Loss 0.845466	 Train Accuracy 53.125
+Epoch 2 Batch 30	 64.4%	 Loss 0.575100	 Train Accuracy 62.5
+Epoch 2 Batch 40	 86.7%	 Loss 0.545398	 Train Accuracy 75.0
+Epoch 3 Batch 10	 20.0%	 Loss 0.560370	 Train Accuracy 75.0
+Epoch 3 Batch 20	 42.2%	 Loss 0.692495	 Train Accuracy 62.5
+Epoch 3 Batch 30	 64.4%	 Loss 0.369863	 Train Accuracy 68.75
+Epoch 3 Batch 40	 86.7%	 Loss 0.644952	 Train Accuracy 56.25
+Epoch 4 Batch 10	 20.0%	 Loss 0.381589	 Train Accuracy 90.625
+Epoch 4 Batch 20	 42.2%	 Loss 0.712848	 Train Accuracy 65.625
+Epoch 4 Batch 30	 64.4%	 Loss 0.285136	 Train Accuracy 93.75
+Epoch 4 Batch 40	 86.7%	 Loss 0.253481	 Train Accuracy 87.5
+Epoch 5 Batch 10	 20.0%	 Loss 0.293701	 Train Accuracy 93.75
+Epoch 5 Batch 20	 42.2%	 Loss 0.462613	 Train Accuracy 75.0
+Epoch 5 Batch 30	 64.4%	 Loss 0.147032	 Train Accuracy 100.0
+Epoch 5 Batch 40	 86.7%	 Loss 0.192209	 Train Accuracy 90.625
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train3_fold2.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Results for model trained with noise size 3:
+
+Evaluation noise size 0:
+Test Loss: 8.9616
+Test Accuracy: 0.5000
+Test Precision: 0.5398
+Test Recall: 0.4643
+Test F1 Score: 0.4901
+
+Evaluation noise size 1:
+Test Loss: 7.7322
+Test Accuracy: 0.5775
+Test Precision: 0.6087
+Test Recall: 0.6101
+Test F1 Score: 0.6010
+
+Evaluation noise size 2:
+Test Loss: 6.7035
+Test Accuracy: 0.6297
+Test Precision: 0.6452
+Test Recall: 0.7083
+Test F1 Score: 0.6703
+
+Evaluation noise size 3:
+Test Loss: 5.7213
+Test Accuracy: 0.6835
+Test Precision: 0.6747
+Test Recall: 0.8095
+Test F1 Score: 0.7323
+
+Evaluation noise size 4:
+Test Loss: 5.4134
+Test Accuracy: 0.7073
+Test Precision: 0.6856
+Test Recall: 0.8542
+Test F1 Score: 0.7584
+
+Evaluation noise size 5:
+Test Loss: 5.0354
+Test Accuracy: 0.7231
+Test Precision: 0.6933
+Test Recall: 0.8839
+Test F1 Score: 0.7740
+
+Evaluation noise size 6:
+Test Loss: 5.0337
+Test Accuracy: 0.7278
+Test Precision: 0.6955
+Test Recall: 0.8929
+Test F1 Score: 0.7785
+
+Evaluation noise size 7:
+Test Loss: 4.9240
+Test Accuracy: 0.7358
+Test Precision: 0.6990
+Test Recall: 0.9077
+Test F1 Score: 0.7863
+
+Evaluation noise size 8:
+Test Loss: 4.9564
+Test Accuracy: 0.7310
+Test Precision: 0.6970
+Test Recall: 0.8988
+Test F1 Score: 0.7812
+
+Evaluation noise size 9:
+Test Loss: 5.0413
+Test Accuracy: 0.7326
+Test Precision: 0.6978
+Test Recall: 0.9018
+Test F1 Score: 0.7819
+
+Training with noise size 4
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Training VGGNet
+Training on fold 1
+Epoch 1 Batch 10	 20.0%	 Loss 0.662417	 Train Accuracy 62.5
+Epoch 1 Batch 20	 42.2%	 Loss 0.734047	 Train Accuracy 37.5
+Epoch 1 Batch 30	 64.4%	 Loss 0.609184	 Train Accuracy 71.875
+Epoch 1 Batch 40	 86.7%	 Loss 0.705393	 Train Accuracy 37.5
+Epoch 2 Batch 10	 20.0%	 Loss 0.649064	 Train Accuracy 65.625
+Epoch 2 Batch 20	 42.2%	 Loss 0.672004	 Train Accuracy 56.25
+Epoch 2 Batch 30	 64.4%	 Loss 0.560394	 Train Accuracy 75.0
+Epoch 2 Batch 40	 86.7%	 Loss 0.689763	 Train Accuracy 50.0
+Epoch 3 Batch 10	 20.0%	 Loss 0.621033	 Train Accuracy 75.0
+Epoch 3 Batch 20	 42.2%	 Loss 0.613685	 Train Accuracy 78.125
+Epoch 3 Batch 30	 64.4%	 Loss 0.488405	 Train Accuracy 78.125
+Epoch 3 Batch 40	 86.7%	 Loss 0.638228	 Train Accuracy 71.875
+Epoch 4 Batch 10	 20.0%	 Loss 0.581024	 Train Accuracy 75.0
+Epoch 4 Batch 20	 42.2%	 Loss 0.539250	 Train Accuracy 84.375
+Epoch 4 Batch 30	 64.4%	 Loss 0.402659	 Train Accuracy 93.75
+Epoch 4 Batch 40	 86.7%	 Loss 0.579298	 Train Accuracy 84.375
+Epoch 5 Batch 10	 20.0%	 Loss 0.528857	 Train Accuracy 78.125
+Epoch 5 Batch 20	 42.2%	 Loss 0.461973	 Train Accuracy 90.625
+Epoch 5 Batch 30	 64.4%	 Loss 0.340982	 Train Accuracy 93.75
+Epoch 5 Batch 40	 86.7%	 Loss 0.501509	 Train Accuracy 90.625
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train4_fold1.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Training on fold 2
+Epoch 1 Batch 10	 20.0%	 Loss 0.759179	 Train Accuracy 50.0
+Epoch 1 Batch 20	 42.2%	 Loss 0.754055	 Train Accuracy 50.0
+Epoch 1 Batch 30	 64.4%	 Loss 0.655614	 Train Accuracy 62.5
+Epoch 1 Batch 40	 86.7%	 Loss 0.701879	 Train Accuracy 43.75
+Epoch 2 Batch 10	 20.0%	 Loss 0.687879	 Train Accuracy 50.0
+Epoch 2 Batch 20	 42.2%	 Loss 0.727226	 Train Accuracy 53.125
+Epoch 2 Batch 30	 64.4%	 Loss 0.591046	 Train Accuracy 65.625
+Epoch 2 Batch 40	 86.7%	 Loss 0.605721	 Train Accuracy 50.0
+Epoch 3 Batch 10	 20.0%	 Loss 0.614700	 Train Accuracy 59.375
+Epoch 3 Batch 20	 42.2%	 Loss 0.684739	 Train Accuracy 59.375
+Epoch 3 Batch 30	 64.4%	 Loss 0.484449	 Train Accuracy 75.0
+Epoch 3 Batch 40	 86.7%	 Loss 0.559897	 Train Accuracy 71.875
+Epoch 4 Batch 10	 20.0%	 Loss 0.505861	 Train Accuracy 68.75
+Epoch 4 Batch 20	 42.2%	 Loss 0.570538	 Train Accuracy 68.75
+Epoch 4 Batch 30	 64.4%	 Loss 0.302831	 Train Accuracy 87.5
+Epoch 4 Batch 40	 86.7%	 Loss 0.459080	 Train Accuracy 75.0
+Epoch 5 Batch 10	 20.0%	 Loss 0.367368	 Train Accuracy 84.375
+Epoch 5 Batch 20	 42.2%	 Loss 0.477110	 Train Accuracy 75.0
+Epoch 5 Batch 30	 64.4%	 Loss 0.222603	 Train Accuracy 90.625
+Epoch 5 Batch 40	 86.7%	 Loss 0.245673	 Train Accuracy 93.75
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train4_fold2.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Results for model trained with noise size 4:
+
+Evaluation noise size 0:
+Test Loss: 8.5272
+Test Accuracy: 0.4889
+Test Precision: 0.5197
+Test Recall: 0.4167
+Test F1 Score: 0.4562
+
+Evaluation noise size 1:
+Test Loss: 7.9027
+Test Accuracy: 0.5380
+Test Precision: 0.5751
+Test Recall: 0.5089
+Test F1 Score: 0.5355
+
+Evaluation noise size 2:
+Test Loss: 7.1239
+Test Accuracy: 0.5997
+Test Precision: 0.6268
+Test Recall: 0.6250
+Test F1 Score: 0.6246
+
+Evaluation noise size 3:
+Test Loss: 6.6239
+Test Accuracy: 0.6361
+Test Precision: 0.6506
+Test Recall: 0.6935
+Test F1 Score: 0.6700
+
+Evaluation noise size 4:
+Test Loss: 6.0393
+Test Accuracy: 0.6867
+Test Precision: 0.6788
+Test Recall: 0.7887
+Test F1 Score: 0.7289
+
+Evaluation noise size 5:
+Test Loss: 5.8559
+Test Accuracy: 0.6994
+Test Precision: 0.6855
+Test Recall: 0.8125
+Test F1 Score: 0.7423
+
+Evaluation noise size 6:
+Test Loss: 5.8126
+Test Accuracy: 0.6978
+Test Precision: 0.6848
+Test Recall: 0.8095
+Test F1 Score: 0.7405
+
+Evaluation noise size 7:
+Test Loss: 5.6742
+Test Accuracy: 0.7073
+Test Precision: 0.6895
+Test Recall: 0.8274
+Test F1 Score: 0.7502
+
+Evaluation noise size 8:
+Test Loss: 5.5773
+Test Accuracy: 0.7263
+Test Precision: 0.6984
+Test Recall: 0.8631
+Test F1 Score: 0.7705
+
+Evaluation noise size 9:
+Test Loss: 5.7652
+Test Accuracy: 0.7215
+Test Precision: 0.6961
+Test Recall: 0.8542
+Test F1 Score: 0.7659
+
+Training with noise size 5
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Training VGGNet
+Training on fold 1
+Epoch 1 Batch 10	 20.0%	 Loss 0.664855	 Train Accuracy 59.375
+Epoch 1 Batch 20	 42.2%	 Loss 0.738278	 Train Accuracy 43.75
+Epoch 1 Batch 30	 64.4%	 Loss 0.554025	 Train Accuracy 71.875
+Epoch 1 Batch 40	 86.7%	 Loss 0.685181	 Train Accuracy 50.0
+Epoch 2 Batch 10	 20.0%	 Loss 0.547921	 Train Accuracy 84.375
+Epoch 2 Batch 20	 42.2%	 Loss 0.694755	 Train Accuracy 53.125
+Epoch 2 Batch 30	 64.4%	 Loss 0.357542	 Train Accuracy 87.5
+Epoch 2 Batch 40	 86.7%	 Loss 0.558289	 Train Accuracy 75.0
+Epoch 3 Batch 10	 20.0%	 Loss 0.461453	 Train Accuracy 81.25
+Epoch 3 Batch 20	 42.2%	 Loss 0.432635	 Train Accuracy 81.25
+Epoch 3 Batch 30	 64.4%	 Loss 0.242481	 Train Accuracy 90.625
+Epoch 3 Batch 40	 86.7%	 Loss 0.510987	 Train Accuracy 78.125
+Epoch 4 Batch 10	 20.0%	 Loss 0.340323	 Train Accuracy 84.375
+Epoch 4 Batch 20	 42.2%	 Loss 0.315800	 Train Accuracy 90.625
+Epoch 4 Batch 30	 64.4%	 Loss 0.187087	 Train Accuracy 96.875
+Epoch 4 Batch 40	 86.7%	 Loss 0.382383	 Train Accuracy 84.375
+Epoch 5 Batch 10	 20.0%	 Loss 0.263734	 Train Accuracy 90.625
+Epoch 5 Batch 20	 42.2%	 Loss 0.242080	 Train Accuracy 96.875
+Epoch 5 Batch 30	 64.4%	 Loss 0.133466	 Train Accuracy 96.875
+Epoch 5 Batch 40	 86.7%	 Loss 0.278603	 Train Accuracy 87.5
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train5_fold1.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Training on fold 2
+Epoch 1 Batch 10	 20.0%	 Loss 0.858984	 Train Accuracy 50.0
+Epoch 1 Batch 20	 42.2%	 Loss 0.827415	 Train Accuracy 50.0
+Epoch 1 Batch 30	 64.4%	 Loss 0.632765	 Train Accuracy 62.5
+Epoch 1 Batch 40	 86.7%	 Loss 0.655190	 Train Accuracy 65.625
+Epoch 2 Batch 10	 20.0%	 Loss 0.616641	 Train Accuracy 59.375
+Epoch 2 Batch 20	 42.2%	 Loss 0.683844	 Train Accuracy 62.5
+Epoch 2 Batch 30	 64.4%	 Loss 0.486064	 Train Accuracy 78.125
+Epoch 2 Batch 40	 86.7%	 Loss 0.345650	 Train Accuracy 90.625
+Epoch 3 Batch 10	 20.0%	 Loss 0.466760	 Train Accuracy 78.125
+Epoch 3 Batch 20	 42.2%	 Loss 0.464508	 Train Accuracy 78.125
+Epoch 3 Batch 30	 64.4%	 Loss 0.281635	 Train Accuracy 90.625
+Epoch 3 Batch 40	 86.7%	 Loss 0.122575	 Train Accuracy 100.0
+Epoch 4 Batch 10	 20.0%	 Loss 0.339736	 Train Accuracy 84.375
+Epoch 4 Batch 20	 42.2%	 Loss 0.242586	 Train Accuracy 84.375
+Epoch 4 Batch 30	 64.4%	 Loss 0.197431	 Train Accuracy 90.625
+Epoch 4 Batch 40	 86.7%	 Loss 0.080069	 Train Accuracy 100.0
+Epoch 5 Batch 10	 20.0%	 Loss 0.231033	 Train Accuracy 87.5
+Epoch 5 Batch 20	 42.2%	 Loss 0.136854	 Train Accuracy 93.75
+Epoch 5 Batch 30	 64.4%	 Loss 0.145239	 Train Accuracy 93.75
+Epoch 5 Batch 40	 86.7%	 Loss 0.059936	 Train Accuracy 100.0
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train5_fold2.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Results for model trained with noise size 5:
+
+Evaluation noise size 0:
+Test Loss: 17.2383
+Test Accuracy: 0.4668
+Test Precision: 0.5650
+Test Recall: 0.0685
+Test F1 Score: 0.1139
+
+Evaluation noise size 1:
+Test Loss: 16.5541
+Test Accuracy: 0.4778
+Test Precision: 0.6042
+Test Recall: 0.0893
+Test F1 Score: 0.1434
+
+Evaluation noise size 2:
+Test Loss: 13.3153
+Test Accuracy: 0.5269
+Test Precision: 0.7780
+Test Recall: 0.1815
+Test F1 Score: 0.2849
+
+Evaluation noise size 3:
+Test Loss: 7.8702
+Test Accuracy: 0.6472
+Test Precision: 0.8588
+Test Recall: 0.4077
+Test F1 Score: 0.5524
+
+Evaluation noise size 4:
+Test Loss: 4.8007
+Test Accuracy: 0.7690
+Test Precision: 0.8970
+Test Recall: 0.6369
+Test F1 Score: 0.7448
+
+Evaluation noise size 5:
+Test Loss: 3.1167
+Test Accuracy: 0.8386
+Test Precision: 0.9128
+Test Recall: 0.7679
+Test F1 Score: 0.8339
+
+Evaluation noise size 6:
+Test Loss: 2.2495
+Test Accuracy: 0.8908
+Test Precision: 0.9215
+Test Recall: 0.8661
+Test F1 Score: 0.8927
+
+Evaluation noise size 7:
+Test Loss: 2.0843
+Test Accuracy: 0.8908
+Test Precision: 0.9224
+Test Recall: 0.8661
+Test F1 Score: 0.8932
+
+Evaluation noise size 8:
+Test Loss: 1.9157
+Test Accuracy: 0.9066
+Test Precision: 0.9252
+Test Recall: 0.8958
+Test F1 Score: 0.9102
+
+Evaluation noise size 9:
+Test Loss: 1.8587
+Test Accuracy: 0.9066
+Test Precision: 0.9236
+Test Recall: 0.8958
+Test F1 Score: 0.9091
+
+Training with noise size 6
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Training VGGNet
+Training on fold 1
+Epoch 1 Batch 10	 20.0%	 Loss 0.644597	 Train Accuracy 62.5
+Epoch 1 Batch 20	 42.2%	 Loss 0.776025	 Train Accuracy 37.5
+Epoch 1 Batch 30	 64.4%	 Loss 0.548088	 Train Accuracy 71.875
+Epoch 1 Batch 40	 86.7%	 Loss 0.715875	 Train Accuracy 43.75
+Epoch 2 Batch 10	 20.0%	 Loss 0.560891	 Train Accuracy 71.875
+Epoch 2 Batch 20	 42.2%	 Loss 0.678409	 Train Accuracy 56.25
+Epoch 2 Batch 30	 64.4%	 Loss 0.399800	 Train Accuracy 78.125
+Epoch 2 Batch 40	 86.7%	 Loss 0.618299	 Train Accuracy 71.875
+Epoch 3 Batch 10	 20.0%	 Loss 0.360369	 Train Accuracy 81.25
+Epoch 3 Batch 20	 42.2%	 Loss 0.560557	 Train Accuracy 62.5
+Epoch 3 Batch 30	 64.4%	 Loss 0.188252	 Train Accuracy 90.625
+Epoch 3 Batch 40	 86.7%	 Loss 0.301435	 Train Accuracy 87.5
+Epoch 4 Batch 10	 20.0%	 Loss 0.311190	 Train Accuracy 84.375
+Epoch 4 Batch 20	 42.2%	 Loss 0.320752	 Train Accuracy 75.0
+Epoch 4 Batch 30	 64.4%	 Loss 0.138153	 Train Accuracy 93.75
+Epoch 4 Batch 40	 86.7%	 Loss 0.147542	 Train Accuracy 93.75
+Epoch 5 Batch 10	 20.0%	 Loss 0.246967	 Train Accuracy 90.625
+Epoch 5 Batch 20	 42.2%	 Loss 0.210573	 Train Accuracy 90.625
+Epoch 5 Batch 30	 64.4%	 Loss 0.102244	 Train Accuracy 96.875
+Epoch 5 Batch 40	 86.7%	 Loss 0.126644	 Train Accuracy 93.75
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train6_fold1.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Training on fold 2
+Epoch 1 Batch 10	 20.0%	 Loss 1.003697	 Train Accuracy 50.0
+Epoch 1 Batch 20	 42.2%	 Loss 0.832212	 Train Accuracy 53.125
+Epoch 1 Batch 30	 64.4%	 Loss 0.628775	 Train Accuracy 68.75
+Epoch 1 Batch 40	 86.7%	 Loss 0.661390	 Train Accuracy 62.5
+Epoch 2 Batch 10	 20.0%	 Loss 0.570269	 Train Accuracy 62.5
+Epoch 2 Batch 20	 42.2%	 Loss 0.677144	 Train Accuracy 62.5
+Epoch 2 Batch 30	 64.4%	 Loss 0.384438	 Train Accuracy 78.125
+Epoch 2 Batch 40	 86.7%	 Loss 0.410002	 Train Accuracy 78.125
+Epoch 3 Batch 10	 20.0%	 Loss 0.275126	 Train Accuracy 84.375
+Epoch 3 Batch 20	 42.2%	 Loss 0.301193	 Train Accuracy 87.5
+Epoch 3 Batch 30	 64.4%	 Loss 0.218226	 Train Accuracy 93.75
+Epoch 3 Batch 40	 86.7%	 Loss 0.142808	 Train Accuracy 96.875
+Epoch 4 Batch 10	 20.0%	 Loss 0.096531	 Train Accuracy 100.0
+Epoch 4 Batch 20	 42.2%	 Loss 0.109396	 Train Accuracy 96.875
+Epoch 4 Batch 30	 64.4%	 Loss 0.249142	 Train Accuracy 87.5
+Epoch 4 Batch 40	 86.7%	 Loss 0.056006	 Train Accuracy 100.0
+Epoch 5 Batch 10	 20.0%	 Loss 0.053250	 Train Accuracy 100.0
+Epoch 5 Batch 20	 42.2%	 Loss 0.059501	 Train Accuracy 100.0
+Epoch 5 Batch 30	 64.4%	 Loss 0.077219	 Train Accuracy 100.0
+Epoch 5 Batch 40	 86.7%	 Loss 0.031509	 Train Accuracy 100.0
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train6_fold2.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Results for model trained with noise size 6:
+
+Evaluation noise size 0:
+Test Loss: 18.8576
+Test Accuracy: 0.4889
+Test Precision: 0.6639
+Test Recall: 0.1042
+Test F1 Score: 0.1721
+
+Evaluation noise size 1:
+Test Loss: 18.3055
+Test Accuracy: 0.4937
+Test Precision: 0.6771
+Test Recall: 0.1131
+Test F1 Score: 0.1843
+
+Evaluation noise size 2:
+Test Loss: 15.9029
+Test Accuracy: 0.5253
+Test Precision: 0.7637
+Test Recall: 0.1726
+Test F1 Score: 0.2776
+
+Evaluation noise size 3:
+Test Loss: 9.3935
+Test Accuracy: 0.6661
+Test Precision: 0.8657
+Test Recall: 0.4375
+Test F1 Score: 0.5810
+
+Evaluation noise size 4:
+Test Loss: 4.8976
+Test Accuracy: 0.7927
+Test Precision: 0.9152
+Test Recall: 0.6756
+Test F1 Score: 0.7767
+
+Evaluation noise size 5:
+Test Loss: 2.3790
+Test Accuracy: 0.8908
+Test Precision: 0.9322
+Test Recall: 0.8601
+Test F1 Score: 0.8939
+
+Evaluation noise size 6:
+Test Loss: 2.0444
+Test Accuracy: 0.9019
+Test Precision: 0.9335
+Test Recall: 0.8810
+Test F1 Score: 0.9057
+
+Evaluation noise size 7:
+Test Loss: 1.9406
+Test Accuracy: 0.9019
+Test Precision: 0.9342
+Test Recall: 0.8810
+Test F1 Score: 0.9055
+
+Evaluation noise size 8:
+Test Loss: 1.6381
+Test Accuracy: 0.9225
+Test Precision: 0.9371
+Test Recall: 0.9196
+Test F1 Score: 0.9267
+
+Evaluation noise size 9:
+Test Loss: 1.5653
+Test Accuracy: 0.9256
+Test Precision: 0.9355
+Test Recall: 0.9256
+Test F1 Score: 0.9302
+
+Training with noise size 7
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Training VGGNet
+Training on fold 1
+Epoch 1 Batch 10	 20.0%	 Loss 0.668002	 Train Accuracy 62.5
+Epoch 1 Batch 20	 42.2%	 Loss 0.739253	 Train Accuracy 43.75
+Epoch 1 Batch 30	 64.4%	 Loss 0.541818	 Train Accuracy 68.75
+Epoch 1 Batch 40	 86.7%	 Loss 0.655534	 Train Accuracy 62.5
+Epoch 2 Batch 10	 20.0%	 Loss 0.502031	 Train Accuracy 75.0
+Epoch 2 Batch 20	 42.2%	 Loss 0.469205	 Train Accuracy 81.25
+Epoch 2 Batch 30	 64.4%	 Loss 0.364595	 Train Accuracy 81.25
+Epoch 2 Batch 40	 86.7%	 Loss 0.390587	 Train Accuracy 84.375
+Epoch 3 Batch 10	 20.0%	 Loss 0.328721	 Train Accuracy 90.625
+Epoch 3 Batch 20	 42.2%	 Loss 0.228495	 Train Accuracy 100.0
+Epoch 3 Batch 30	 64.4%	 Loss 0.166634	 Train Accuracy 90.625
+Epoch 3 Batch 40	 86.7%	 Loss 0.166092	 Train Accuracy 96.875
+Epoch 4 Batch 10	 20.0%	 Loss 0.194540	 Train Accuracy 96.875
+Epoch 4 Batch 20	 42.2%	 Loss 0.122429	 Train Accuracy 100.0
+Epoch 4 Batch 30	 64.4%	 Loss 0.075853	 Train Accuracy 96.875
+Epoch 4 Batch 40	 86.7%	 Loss 0.066975	 Train Accuracy 100.0
+Epoch 5 Batch 10	 20.0%	 Loss 0.119093	 Train Accuracy 100.0
+Epoch 5 Batch 20	 42.2%	 Loss 0.077600	 Train Accuracy 100.0
+Epoch 5 Batch 30	 64.4%	 Loss 0.035127	 Train Accuracy 100.0
+Epoch 5 Batch 40	 86.7%	 Loss 0.025409	 Train Accuracy 100.0
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train7_fold1.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Training on fold 2
+Epoch 1 Batch 10	 20.0%	 Loss 0.768963	 Train Accuracy 53.125
+Epoch 1 Batch 20	 42.2%	 Loss 0.767907	 Train Accuracy 53.125
+Epoch 1 Batch 30	 64.4%	 Loss 0.672191	 Train Accuracy 62.5
+Epoch 1 Batch 40	 86.7%	 Loss 0.649743	 Train Accuracy 59.375
+Epoch 2 Batch 10	 20.0%	 Loss 0.604936	 Train Accuracy 65.625
+Epoch 2 Batch 20	 42.2%	 Loss 0.702533	 Train Accuracy 65.625
+Epoch 2 Batch 30	 64.4%	 Loss 0.521099	 Train Accuracy 68.75
+Epoch 2 Batch 40	 86.7%	 Loss 0.702855	 Train Accuracy 62.5
+Epoch 3 Batch 10	 20.0%	 Loss 0.474368	 Train Accuracy 75.0
+Epoch 3 Batch 20	 42.2%	 Loss 0.620020	 Train Accuracy 65.625
+Epoch 3 Batch 30	 64.4%	 Loss 0.437424	 Train Accuracy 75.0
+Epoch 3 Batch 40	 86.7%	 Loss 0.916053	 Train Accuracy 50.0
+Epoch 4 Batch 10	 20.0%	 Loss 0.414003	 Train Accuracy 78.125
+Epoch 4 Batch 20	 42.2%	 Loss 0.520293	 Train Accuracy 81.25
+Epoch 4 Batch 30	 64.4%	 Loss 0.301214	 Train Accuracy 87.5
+Epoch 4 Batch 40	 86.7%	 Loss 0.677018	 Train Accuracy 65.625
+Epoch 5 Batch 10	 20.0%	 Loss 0.344804	 Train Accuracy 78.125
+Epoch 5 Batch 20	 42.2%	 Loss 0.431318	 Train Accuracy 81.25
+Epoch 5 Batch 30	 64.4%	 Loss 0.239750	 Train Accuracy 90.625
+Epoch 5 Batch 40	 86.7%	 Loss 0.299138	 Train Accuracy 87.5
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train7_fold2.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Results for model trained with noise size 7:
+
+Evaluation noise size 0:
+Test Loss: 15.5661
+Test Accuracy: 0.4873
+Test Precision: 0.5870
+Test Recall: 0.1220
+Test F1 Score: 0.2005
+
+Evaluation noise size 1:
+Test Loss: 14.8642
+Test Accuracy: 0.4968
+Test Precision: 0.6161
+Test Recall: 0.1399
+Test F1 Score: 0.2256
+
+Evaluation noise size 2:
+Test Loss: 14.1718
+Test Accuracy: 0.5142
+Test Precision: 0.6588
+Test Recall: 0.1726
+Test F1 Score: 0.2693
+
+Evaluation noise size 3:
+Test Loss: 11.8189
+Test Accuracy: 0.5538
+Test Precision: 0.7336
+Test Recall: 0.2470
+Test F1 Score: 0.3625
+
+Evaluation noise size 4:
+Test Loss: 8.0503
+Test Accuracy: 0.6551
+Test Precision: 0.8376
+Test Recall: 0.4375
+Test F1 Score: 0.5724
+
+Evaluation noise size 5:
+Test Loss: 4.6391
+Test Accuracy: 0.7674
+Test Precision: 0.8835
+Test Recall: 0.6488
+Test F1 Score: 0.7479
+
+Evaluation noise size 6:
+Test Loss: 3.0132
+Test Accuracy: 0.8528
+Test Precision: 0.9025
+Test Recall: 0.8095
+Test F1 Score: 0.8531
+
+Evaluation noise size 7:
+Test Loss: 2.3807
+Test Accuracy: 0.8782
+Test Precision: 0.9066
+Test Recall: 0.8571
+Test F1 Score: 0.8802
+
+Evaluation noise size 8:
+Test Loss: 1.9853
+Test Accuracy: 0.9019
+Test Precision: 0.9112
+Test Recall: 0.9018
+Test F1 Score: 0.9058
+
+Evaluation noise size 9:
+Test Loss: 1.8153
+Test Accuracy: 0.9225
+Test Precision: 0.9151
+Test Recall: 0.9405
+Test F1 Score: 0.9273
+
+Training with noise size 8
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Training VGGNet
+Training on fold 1
+Epoch 1 Batch 10	 20.0%	 Loss 0.635261	 Train Accuracy 71.875
+Epoch 1 Batch 20	 42.2%	 Loss 0.778023	 Train Accuracy 37.5
+Epoch 1 Batch 30	 64.4%	 Loss 0.532983	 Train Accuracy 75.0
+Epoch 1 Batch 40	 86.7%	 Loss 0.738531	 Train Accuracy 46.875
+Epoch 2 Batch 10	 20.0%	 Loss 0.326505	 Train Accuracy 90.625
+Epoch 2 Batch 20	 42.2%	 Loss 0.435694	 Train Accuracy 71.875
+Epoch 2 Batch 30	 64.4%	 Loss 0.152196	 Train Accuracy 96.875
+Epoch 2 Batch 40	 86.7%	 Loss 0.140360	 Train Accuracy 100.0
+Epoch 3 Batch 10	 20.0%	 Loss 0.244009	 Train Accuracy 93.75
+Epoch 3 Batch 20	 42.2%	 Loss 0.258712	 Train Accuracy 87.5
+Epoch 3 Batch 30	 64.4%	 Loss 0.016766	 Train Accuracy 100.0
+Epoch 3 Batch 40	 86.7%	 Loss 0.013899	 Train Accuracy 100.0
+Epoch 4 Batch 10	 20.0%	 Loss 0.033291	 Train Accuracy 100.0
+Epoch 4 Batch 20	 42.2%	 Loss 0.045100	 Train Accuracy 96.875
+Epoch 4 Batch 30	 64.4%	 Loss 0.005096	 Train Accuracy 100.0
+Epoch 4 Batch 40	 86.7%	 Loss 0.002757	 Train Accuracy 100.0
+Epoch 5 Batch 10	 20.0%	 Loss 0.001367	 Train Accuracy 100.0
+Epoch 5 Batch 20	 42.2%	 Loss 0.004569	 Train Accuracy 100.0
+Epoch 5 Batch 30	 64.4%	 Loss 0.001970	 Train Accuracy 100.0
+Epoch 5 Batch 40	 86.7%	 Loss 0.001079	 Train Accuracy 100.0
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train8_fold1.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Training on fold 2
+Epoch 1 Batch 10	 20.0%	 Loss 0.712203	 Train Accuracy 50.0
+Epoch 1 Batch 20	 42.2%	 Loss 0.756500	 Train Accuracy 50.0
+Epoch 1 Batch 30	 64.4%	 Loss 0.664685	 Train Accuracy 62.5
+Epoch 1 Batch 40	 86.7%	 Loss 0.709213	 Train Accuracy 56.25
+Epoch 2 Batch 10	 20.0%	 Loss 0.520677	 Train Accuracy 75.0
+Epoch 2 Batch 20	 42.2%	 Loss 0.760362	 Train Accuracy 59.375
+Epoch 2 Batch 30	 64.4%	 Loss 0.272657	 Train Accuracy 87.5
+Epoch 2 Batch 40	 86.7%	 Loss 0.200821	 Train Accuracy 90.625
+Epoch 3 Batch 10	 20.0%	 Loss 0.425465	 Train Accuracy 81.25
+Epoch 3 Batch 20	 42.2%	 Loss 0.190277	 Train Accuracy 93.75
+Epoch 3 Batch 30	 64.4%	 Loss 0.101157	 Train Accuracy 96.875
+Epoch 3 Batch 40	 86.7%	 Loss 0.119546	 Train Accuracy 96.875
+Epoch 4 Batch 10	 20.0%	 Loss 0.298314	 Train Accuracy 84.375
+Epoch 4 Batch 20	 42.2%	 Loss 0.116535	 Train Accuracy 93.75
+Epoch 4 Batch 30	 64.4%	 Loss 0.057862	 Train Accuracy 96.875
+Epoch 4 Batch 40	 86.7%	 Loss 0.045929	 Train Accuracy 100.0
+Epoch 5 Batch 10	 20.0%	 Loss 0.110649	 Train Accuracy 93.75
+Epoch 5 Batch 20	 42.2%	 Loss 0.076702	 Train Accuracy 96.875
+Epoch 5 Batch 30	 64.4%	 Loss 0.038134	 Train Accuracy 100.0
+Epoch 5 Batch 40	 86.7%	 Loss 0.015731	 Train Accuracy 100.0
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train8_fold2.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+/home/arnaud/miniconda3/envs/mri/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/home/arnaud/miniconda3/envs/mri/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/home/arnaud/miniconda3/envs/mri/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/home/arnaud/miniconda3/envs/mri/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/home/arnaud/miniconda3/envs/mri/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Results for model trained with noise size 8:
+
+Evaluation noise size 0:
+Test Loss: 32.3903
+Test Accuracy: 0.4731
+Test Precision: 1.0000
+Test Recall: 0.0089
+Test F1 Score: 0.0177
+
+Evaluation noise size 1:
+Test Loss: 31.9662
+Test Accuracy: 0.4715
+Test Precision: 1.0000
+Test Recall: 0.0060
+Test F1 Score: 0.0118
+
+Evaluation noise size 2:
+Test Loss: 30.2754
+Test Accuracy: 0.4842
+Test Precision: 1.0000
+Test Recall: 0.0298
+Test F1 Score: 0.0568
+
+Evaluation noise size 3:
+Test Loss: 25.3787
+Test Accuracy: 0.5301
+Test Precision: 1.0000
+Test Recall: 0.1161
+Test F1 Score: 0.1904
+
+Evaluation noise size 4:
+Test Loss: 19.6252
+Test Accuracy: 0.5918
+Test Precision: 1.0000
+Test Recall: 0.2321
+Test F1 Score: 0.3318
+
+Evaluation noise size 5:
+Test Loss: 10.1576
+Test Accuracy: 0.7263
+Test Precision: 1.0000
+Test Recall: 0.4851
+Test F1 Score: 0.6442
+
+Evaluation noise size 6:
+Test Loss: 3.6518
+Test Accuracy: 0.8782
+Test Precision: 1.0000
+Test Recall: 0.7708
+Test F1 Score: 0.8700
+
+Evaluation noise size 7:
+Test Loss: 0.9286
+Test Accuracy: 0.9589
+Test Precision: 1.0000
+Test Recall: 0.9226
+Test F1 Score: 0.9594
+
+Evaluation noise size 8:
+Test Loss: 0.4551
+Test Accuracy: 0.9763
+Test Precision: 1.0000
+Test Recall: 0.9554
+Test F1 Score: 0.9769
+
+Evaluation noise size 9:
+Test Loss: 0.1732
+Test Accuracy: 0.9968
+Test Precision: 1.0000
+Test Recall: 0.9940
+Test F1 Score: 0.9970
+
+Training with noise size 9
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Training VGGNet
+Training on fold 1
+Epoch 1 Batch 10	 20.0%	 Loss 0.661426	 Train Accuracy 53.125
+Epoch 1 Batch 20	 42.2%	 Loss 0.894688	 Train Accuracy 37.5
+Epoch 1 Batch 30	 64.4%	 Loss 0.533859	 Train Accuracy 68.75
+Epoch 1 Batch 40	 86.7%	 Loss 0.605242	 Train Accuracy 65.625
+Epoch 2 Batch 10	 20.0%	 Loss 0.400508	 Train Accuracy 87.5
+Epoch 2 Batch 20	 42.2%	 Loss 0.538455	 Train Accuracy 62.5
+Epoch 2 Batch 30	 64.4%	 Loss 0.275685	 Train Accuracy 87.5
+Epoch 2 Batch 40	 86.7%	 Loss 0.102870	 Train Accuracy 100.0
+Epoch 3 Batch 10	 20.0%	 Loss 0.065084	 Train Accuracy 96.875
+Epoch 3 Batch 20	 42.2%	 Loss 0.014101	 Train Accuracy 100.0
+Epoch 3 Batch 30	 64.4%	 Loss 0.010320	 Train Accuracy 100.0
+Epoch 3 Batch 40	 86.7%	 Loss 0.002111	 Train Accuracy 100.0
+Epoch 4 Batch 10	 20.0%	 Loss 0.005334	 Train Accuracy 100.0
+Epoch 4 Batch 20	 42.2%	 Loss 0.001514	 Train Accuracy 100.0
+Epoch 4 Batch 30	 64.4%	 Loss 0.002239	 Train Accuracy 100.0
+Epoch 4 Batch 40	 86.7%	 Loss 0.000603	 Train Accuracy 100.0
+Epoch 5 Batch 10	 20.0%	 Loss 0.002559	 Train Accuracy 100.0
+Epoch 5 Batch 20	 42.2%	 Loss 0.000536	 Train Accuracy 100.0
+Epoch 5 Batch 30	 64.4%	 Loss 0.001053	 Train Accuracy 100.0
+Epoch 5 Batch 40	 86.7%	 Loss 0.000319	 Train Accuracy 100.0
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train9_fold1.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Training on fold 2
+Epoch 1 Batch 10	 20.0%	 Loss 0.805308	 Train Accuracy 50.0
+Epoch 1 Batch 20	 42.2%	 Loss 0.774842	 Train Accuracy 53.125
+Epoch 1 Batch 30	 64.4%	 Loss 0.674383	 Train Accuracy 65.625
+Epoch 1 Batch 40	 86.7%	 Loss 1.040379	 Train Accuracy 56.25
+Epoch 2 Batch 10	 20.0%	 Loss 0.283612	 Train Accuracy 90.625
+Epoch 2 Batch 20	 42.2%	 Loss 0.533505	 Train Accuracy 71.875
+Epoch 2 Batch 30	 64.4%	 Loss 0.039249	 Train Accuracy 100.0
+Epoch 2 Batch 40	 86.7%	 Loss 0.005807	 Train Accuracy 100.0
+Epoch 3 Batch 10	 20.0%	 Loss 0.005095	 Train Accuracy 100.0
+Epoch 3 Batch 20	 42.2%	 Loss 0.079337	 Train Accuracy 96.875
+Epoch 3 Batch 30	 64.4%	 Loss 0.004257	 Train Accuracy 100.0
+Epoch 3 Batch 40	 86.7%	 Loss 0.001322	 Train Accuracy 100.0
+Epoch 4 Batch 10	 20.0%	 Loss 0.001523	 Train Accuracy 100.0
+Epoch 4 Batch 20	 42.2%	 Loss 0.002602	 Train Accuracy 100.0
+Epoch 4 Batch 30	 64.4%	 Loss 0.001072	 Train Accuracy 100.0
+Epoch 4 Batch 40	 86.7%	 Loss 0.000347	 Train Accuracy 100.0
+Epoch 5 Batch 10	 20.0%	 Loss 0.000643	 Train Accuracy 100.0
+Epoch 5 Batch 20	 42.2%	 Loss 0.001432	 Train Accuracy 100.0
+Epoch 5 Batch 30	 64.4%	 Loss 0.000618	 Train Accuracy 100.0
+Epoch 5 Batch 40	 86.7%	 Loss 0.000209	 Train Accuracy 100.0
+Best model saved to ./models/kfoldtest_lil2/VGGNet_train9_fold2.pt
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+Total dataset size: 3150
+Number of T1 images: 1476
+Number of T2 images: 1674
+
+Results for model trained with noise size 9:
+
+Evaluation noise size 0:
+Test Loss: 42.0276
+Test Accuracy: 0.4684
+Test Precision: 0.0000
+Test Recall: 0.0000
+Test F1 Score: 0.0000
+
+Evaluation noise size 1:
+Test Loss: 42.0722
+Test Accuracy: 0.4684
+Test Precision: 0.0000
+Test Recall: 0.0000
+Test F1 Score: 0.0000
+
+Evaluation noise size 2:
+Test Loss: 41.1076
+Test Accuracy: 0.4699
+Test Precision: 0.5000
+Test Recall: 0.0030
+Test F1 Score: 0.0059
+
+Evaluation noise size 3:
+Test Loss: 37.7778
+Test Accuracy: 0.4747
+Test Precision: 1.0000
+Test Recall: 0.0119
+Test F1 Score: 0.0235
+
+Evaluation noise size 4:
+Test Loss: 31.6149
+Test Accuracy: 0.5158
+Test Precision: 1.0000
+Test Recall: 0.0893
+Test F1 Score: 0.1560
+
+Evaluation noise size 5:
+Test Loss: 18.7083
+Test Accuracy: 0.6456
+Test Precision: 1.0000
+Test Recall: 0.3333
+Test F1 Score: 0.4854
+
+Evaluation noise size 6:
+Test Loss: 7.9543
+Test Accuracy: 0.8196
+Test Precision: 1.0000
+Test Recall: 0.6607
+Test F1 Score: 0.7875
+
+Evaluation noise size 7:
+Test Loss: 2.8004
+Test Accuracy: 0.9225
+Test Precision: 1.0000
+Test Recall: 0.8542
+Test F1 Score: 0.9179
+
+Evaluation noise size 8:
+Test Loss: 0.6304
+Test Accuracy: 0.9810
+Test Precision: 1.0000
+Test Recall: 0.9643
+Test F1 Score: 0.9816
+
+Evaluation noise size 9:
+Test Loss: 0.0787
+Test Accuracy: 0.9953
+Test Precision: 1.0000
+Test Recall: 0.9911
+Test F1 Score: 0.9955
+
+Total time: 3298.839

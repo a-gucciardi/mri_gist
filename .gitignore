@@ -1,0 +1,17 @@
+**/*.nii.gz
+**/*.nrrd
+**/*.csv
+**/*.DS_Store
+**/*__pycache__
+
+old/code/vol_vis/*/
+old/data/sub-CC00058XX09_ses-11300_T2w.nii.gz
+
+*.egg-info/
+steps.md
+
+mri_gist/visualization/static/nrrd
+
+02_tests/*/
+
+PUB_README.md

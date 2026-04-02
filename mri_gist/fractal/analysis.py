@@ -1,14 +1,15 @@
 from __future__ import annotations
 
 from glob import glob
-import re
 from pathlib import Path
 from time import perf_counter
-from typing import Callable, Iterable
+from typing import Iterable
+import re
 
 import nibabel as nib
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
 
 from .core import compute_fractal_dimension_from_array, load_volume
 from .labels import load_label_lookup, sanitize_label_name
@@ -31,11 +32,6 @@ DEFAULT_RESULT_COLUMNS = [
     "voxel_size_z_mm",
     "nonzero_voxels",
 ]
-
-
-ProgressCallback = Callable[[str], None]
-
-
 def compute_segmentation_table(
     segmentation_path: str | Path,
     *,
@@ -43,19 +39,34 @@ def compute_segmentation_table(
     per_label: bool = False,
     include_labels: Iterable[int] | None = None,
     verbose: bool = False,
-    progress_callback: ProgressCallback | None = None,
+    show_progress: bool = False,
+    progress_label: str | None = None,
+    progress_leave: bool = True,
 ) -> pd.DataFrame:
     started_at = perf_counter()
-    if progress_callback:
-        progress_callback(f"Loading segmentation: {segmentation_path}")
-
     volume = load_volume(segmentation_path)
     metadata = extract_bids_metadata(volume.path)
+    progress_name = progress_label or volume.path.name
+
+    label_data = np.rint(volume.data).astype(np.int64) if per_label else None
+    allowed_labels = set(include_labels) if include_labels else None
+    labels: list[int] = []
+    if per_label and label_data is not None:
+        labels = sorted(int(value) for value in np.unique(label_data) if int(value) != 0)
+        if allowed_labels is not None:
+            labels = [label for label in labels if label in allowed_labels]
+
+    progress_total = 1 + len(labels)
+    progress_bar = None
+    if show_progress:
+        progress_bar = tqdm(
+            total=progress_total,
+            desc=progress_name,
+            unit="step",
+            leave=progress_leave,
+        )
 
     rows: list[dict[str, object]] = []
-    if progress_callback:
-        progress_callback("Computing whole-brain fractal dimension...")
-
     whole_brain_row = _build_result_row(
         volume=volume,
         scope="whole_brain",
@@ -66,27 +77,14 @@ def compute_segmentation_table(
         verbose=verbose,
     )
     rows.append(whole_brain_row)
-
-    if progress_callback:
-        progress_callback(
-            "  whole_brain: "
-            f"fd={whole_brain_row['fd']:.4f}, "
-            f"window={whole_brain_row['min_box_size_mm']:.1f}-{whole_brain_row['max_box_size_mm']:.1f} mm"
-        )
+    if progress_bar is not None:
+        progress_bar.update(1)
+        progress_bar.set_postfix_str(f"whole-brain fd={whole_brain_row['fd']:.4f}")
 
     if per_label:
-        lookup = load_label_lookup(lut_path) if lut_path else {}
-        label_data = np.rint(volume.data).astype(np.int64)
-        allowed_labels = set(include_labels) if include_labels else None
-
-        labels = sorted(int(value) for value in np.unique(label_data) if int(value) != 0)
-        if progress_callback:
-            progress_callback(f"Computing per-label fractal dimensions for {len(labels)} labels...")
+        lookup = load_label_lookup(lut_path)
 
         for label in labels:
-            if allowed_labels is not None and label not in allowed_labels:
-                continue
-
             label_name = lookup.get(label, f"label_{label}")
             row = _build_result_row(
                 volume=volume,
@@ -99,16 +97,14 @@ def compute_segmentation_table(
             )
             rows.append(row)
 
-            if progress_callback:
-                progress_callback(
-                    f"  label {label} ({label_name}): fd={row['fd']:.4f}"
-                )
+            if progress_bar is not None:
+                progress_bar.update(1)
+                progress_bar.set_postfix_str(f"last={label_name} fd={row['fd']:.4f}")
 
-    if progress_callback:
-        elapsed = perf_counter() - started_at
-        progress_callback(
-            f"Completed {volume.path.name} in {elapsed:.1f}s"
-        )
+    elapsed = perf_counter() - started_at
+    if progress_bar is not None:
+        progress_bar.set_postfix_str(f"done in {elapsed:.1f}s")
+        progress_bar.close()
 
     dataframe = pd.DataFrame(rows)
     return dataframe[DEFAULT_RESULT_COLUMNS]
@@ -123,21 +119,22 @@ def compute_batch_table(
     merge_keys: Iterable[str] = ("participant_id", "session_id"),
     include_labels: Iterable[int] | None = None,
     verbose: bool = False,
-    progress_callback: ProgressCallback | None = None,
+    show_progress: bool = False,
 ) -> pd.DataFrame:
     started_at = perf_counter()
     matches = sorted(Path(path) for path in glob(input_pattern, recursive=True))
     if not matches:
         raise FileNotFoundError(f"No files matched pattern: {input_pattern}")
 
-    if progress_callback:
-        progress_callback(f"Matched {len(matches)} segmentation volume(s)")
+    volume_progress = None
+    if show_progress:
+        volume_progress = tqdm(matches, desc="Volumes", unit="volume")
+        iterator = volume_progress
+    else:
+        iterator = matches
 
     tables = []
-    for index, match in enumerate(matches, start=1):
-        if progress_callback:
-            progress_callback(f"[{index}/{len(matches)}] Starting {match.name}")
-
+    for match in iterator:
         tables.append(
             compute_segmentation_table(
                 match,
@@ -145,19 +142,20 @@ def compute_batch_table(
                 per_label=per_label,
                 include_labels=include_labels,
                 verbose=verbose,
-                progress_callback=progress_callback,
+                show_progress=show_progress,
+                progress_label=match.name,
+                progress_leave=False,
             )
         )
 
     combined = pd.concat(tables, ignore_index=True)
     if metadata_path:
-        if progress_callback:
-            progress_callback(f"Merging metadata from {metadata_path}")
         combined = merge_metadata_table(combined, metadata_path, merge_keys=merge_keys)
 
-    if progress_callback:
+    if volume_progress is not None:
         elapsed = perf_counter() - started_at
-        progress_callback(f"Completed batch in {elapsed:.1f}s")
+        volume_progress.set_postfix_str(f"done in {elapsed:.1f}s")
+        volume_progress.close()
 
     return combined
 
@@ -210,7 +208,7 @@ def generate_binary_masks(
 ) -> list[Path]:
     volume = load_volume(segmentation_path)
     label_data = np.rint(volume.data).astype(np.int64)
-    lookup = load_label_lookup(lut_path) if lut_path else {}
+    lookup = load_label_lookup(lut_path)
     allowed_labels = set(include_labels) if include_labels else None
 
     output_path = Path(output_dir)

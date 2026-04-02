@@ -1,14 +1,26 @@
 from __future__ import annotations
 
-import csv
 import re
 from pathlib import Path
 
 import pandas as pd
 
 
-def load_label_lookup(lut_path: str | Path) -> dict[int, str]:
-    path = Path(lut_path)
+def get_default_lut_path() -> Path:
+    path = Path(__file__).resolve().parent / "FreeSurferColorLUT.txt"
+    if not path.exists():
+        raise FileNotFoundError(f"Bundled FreeSurfer LUT not found: {path}")
+    return path
+
+
+def resolve_lut_path(lut_path: str | Path | None) -> Path:
+    if lut_path is None:
+        return get_default_lut_path()
+    return Path(lut_path)
+
+
+def load_label_lookup(lut_path: str | Path | None = None) -> dict[int, str]:
+    path = resolve_lut_path(lut_path)
     suffixes = path.suffixes
     if ".tsv" in suffixes or path.suffix == ".csv":
         return _load_tabular_lut(path)

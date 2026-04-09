@@ -38,23 +38,32 @@ ___
 
 Usage :
 ```bash
-python -m mri_gist.cli <command> <options>
+uv run mri_gist <command> <options>
 ```
 
 For individual command details :
 ```bash
-python -m mri_gist.cli <command> --help
+uv run mri_gist <command> --help
 ```
 
 Web UI :
 ```bash
-python -m mri_gist.cli serve <anat_path>
+uv run mri_gist serve <anat_path>
 ```
 -> looks into anat_sample by default
 
 Commands :
     - [ ] convert : Convert between medical imaging formats (nii, nrrd, vtk, stl, obj)
+     - [ ] fractal : Compute whole-brain and per-label fractal dimensions from segmentation volumes
     - [ ] register : Register an MRI to a template
     - [ ] separate: Separate brain into left and right hemispheres
     - [ ] segment : Segment an MRI 
     - [ ] serve : Launch the web UI
+
+Fractal examples:
+```bash
+uv run mri_gist fractal compute path/to/seg.nii.gz -o results.csv
+uv run mri_gist fractal compute path/to/seg.nii.gz -o results.csv --per-label
+uv run mri_gist fractal masks path/to/seg.nii.gz -o mask_dir
+uv run mri_gist fractal batch "data/**/*seg.nii.gz" -o batch_results.csv --per-label
+```

@@ -42,5 +42,8 @@ mri-gist = "mri_gist.cli:cli" # mri-gist runs cli()
 Homepage = "https://github.com/a-gucciardi/mri_gist"
 Repository = "https://github.com/a-gucciardi/mri_gist"
 
-[tool.setuptools]
-packages = ["mri_gist"]
+[tool.setuptools.packages.find]
+include = ["mri_gist*"]
+
+[tool.setuptools.package-data]
+mri_gist = ["fractal/*.txt", "fractal/*.tsv"]

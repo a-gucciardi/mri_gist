@@ -237,7 +237,7 @@ def fractal_batch(input_pattern, output, lut, per_label, metadata, merge_keys):
 @click.option('--lut', type=click.Path(exists=True), help='Label lookup table used to name mask files; defaults to the bundled FreeSurfer LUT')
 @click.option('--overwrite', is_flag=True, help='Overwrite existing mask files')
 def fractal_masks(input_file, output_dir, lut, overwrite):
-    """Generate binary masks for each non-zero label in a segmentation volume"""
+    """Generate binary masks for each non-zero label in a seg volume"""
     from mri_gist.fractal import generate_binary_masks
 
     lut_path = lut if lut else str(get_default_lut_path())

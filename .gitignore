@@ -11,6 +11,12 @@ old/data/sub-CC00058XX09_ses-11300_T2w.nii.gz
 steps.md
 
 mri_gist/visualization/static/nrrd
+mri_gist/fractal_pipeline/*.py
+mri_gist/fractal_pipeline/*.md
+mri_gist/fractal_pipeline/*.tsv
+mri_gist/fractal_pipeline/*.txt
+mri_gist/fractal_pipeline/*.sh
+mri_gist/fractal_pipeline/*.ipynb
 
 02_tests/*/
 

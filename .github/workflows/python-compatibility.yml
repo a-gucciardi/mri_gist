@@ -1,0 +1,32 @@
+name: Python compatibility
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+    env:
+      ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS: "1"
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.9.7"
+      - name: Install locked dependencies and project wheel
+        run: uv sync --locked --python "${{ matrix.python-version }}" --no-editable --no-build-package antspyx
+      - name: Check installed dependency metadata
+        run: uv pip check
+      - name: Run compatibility smoke tests
+        working-directory: ${{ runner.temp }}
+        run: '"$GITHUB_WORKSPACE/.venv/bin/python" -m unittest discover -s "$GITHUB_WORKSPACE/tests" -v'

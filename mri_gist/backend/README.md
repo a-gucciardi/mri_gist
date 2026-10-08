@@ -26,21 +26,32 @@ The MRI-GIST Backend Service provides a RESTful API for MRI data processing, ana
 - **Job Tracking**: Monitor processing jobs with status updates
 - **Result Retrieval**: Access processed data and analytics results
 
+### 5. Frontend Serving
+- **Single Entry Point**: Serves the unified React Frontend at the root URL (`/`).
+- **Static Asset Management**: Efficiently serves visualization assets and MRI data files.
+
 ## Architecture
 
 ```
 mri_gist/
-└── backend/
-    ├── __init__.py          # Module initialization
-    ├── server.py           # FastAPI application and endpoints
-    ├── analytics.py        # Analytics algorithms and calculations
-    └── README.md           # This file
+├── backend/
+│   ├── __init__.py          # Module initialization
+│   ├── server.py           # FastAPI application (API + Static Serving)
+│   ├── analytics.py        # Analytics algorithms
+│   └── README.md           # This file
+└── visualization/
+    └── frontend/           # React Source Code
+        └── dist/           # Built Frontend Assets (served by backend)
 ```
 
 ## API Endpoints
 
 ### Base URL
-`http://localhost:8000` (default)
+`http://localhost:8000`
+- `/`: React Frontend
+- `/api/*`: REST API
+- `/data/*`: Access to backend_data files
+- `/static/*`: Access to legacy visualization files
 
 ### Processing Endpoints
 

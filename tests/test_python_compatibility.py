@@ -215,21 +215,41 @@ class PythonCompatibilityTests(unittest.TestCase):
         self.assertAlmostEqual(statistics["basic_stats"]["mean"], float(self.data.mean()))
         self.assertAlmostEqual(statistics["volume_stats"]["voxel_volume_mm3"], 7.5)
         json.dumps(statistics, allow_nan=False)
-        for server in (backend, visualization):
+        for server, expected_paths in (
+            (backend, ("/api/health", "/api/process", "/api/analytics")),
+            (visualization, ("/api/files", "/api/process/segment")),
+        ):
             with self.subTest(server=server.__name__):
                 schema = server.app.openapi()
-                self.assertIn("/api/files", schema["paths"])
+                for path in expected_paths:
+                    self.assertIn(path, schema["paths"])
                 json.dumps(schema, allow_nan=False)
-        with patch.object(backend, "DATA_DIR", self.directory), patch.object(
-            backend, "LEGACY_DATA_DIR", self.directory / "missing"
+        with patch.object(
+            backend,
+            "JOB_REGISTRY",
+            {
+                "smoke-job": {
+                    "status": "completed",
+                    "task_type": "conversion",
+                    "input_file": str(self.input_path),
+                    "output_file": str(self.directory / "converted.nrrd"),
+                    "timestamp": "2026-01-01T00:00:00",
+                }
+            },
         ):
-            files = asyncio.run(backend.list_files())
-        self.assertEqual(len(files), 1)
-        self.assertEqual(files[0].name, self.input_path.name)
-        self.assertEqual(json.loads(files[0].model_dump_json())["type"], ".nii.gz")
+            health = asyncio.run(backend.health_check())
+            self.assertEqual(health["status"], "healthy")
+            self.assertEqual(health["active_jobs"], 0)
+            self.assertEqual(health["completed_jobs"], 1)
+            response = asyncio.run(backend.get_processing_status("smoke-job"))
+            payload = json.loads(response.model_dump_json())
+            self.assertEqual(payload["job_id"], "smoke-job")
+            self.assertEqual(payload["status"], "completed")
+            self.assertEqual(payload["task_type"], "conversion")
         files = asyncio.run(visualization.list_files(str(self.directory)))
         self.assertEqual(len(files), 1)
         self.assertEqual(files[0].name, self.input_path.name)
+        self.assertEqual(json.loads(files[0].model_dump_json())["type"], ".nii.gz")
 
 
 if __name__ == "__main__":

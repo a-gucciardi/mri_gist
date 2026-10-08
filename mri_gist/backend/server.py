@@ -13,21 +13,36 @@ from pydantic import BaseModel
 import uvicorn
 from datetime import datetime
 import uuid
+from typing import List
+from fastapi.staticfiles import StaticFiles
 
 from mri_gist.utils.logging import setup_logger
 from mri_gist.backend.analytics import run_analytics_analysis
 
 logger = logging.getLogger("rich")
 
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Initialize backend service"""
+    setup_logger()
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    logger.info("MRI-GIST Backend API started")
+    logger.info(f"Data directory: {DATA_DIR}")
+    yield
+    # Cleanup code can go here if needed
+    logger.info("MRI-GIST Backend API shutting down")
+
 app = FastAPI(
     title="MRI-GIST Backend API",
     description="API for MRI processing, analytics, and model serving",
     version="0.1.0",
     docs_url="/api/docs",
-    redoc_url="/api/redoc"
+    redoc_url="/api/redoc",
+    lifespan=lifespan
 )
 
-# Models
 class ProcessingRequest(BaseModel):
     """Request model for processing tasks"""
     input_file: str
@@ -73,17 +88,57 @@ class ModelPredictionResponse(BaseModel):
     predictions: Dict[str, Any]
     timestamp: str
 
+class FileInfo(BaseModel):
+    name: str
+    path: str
+    url: str
+    size: int
+    type: str
+
 # Global state
 JOB_REGISTRY = {}
 DATA_DIR = Path.cwd() / "backend_data"
+LEGACY_DATA_DIR = Path.cwd() / "mri_gist" / "visualization" / "static" / "nrrd" # Specific to where NRRDs were
 
-@app.on_event("startup")
-async def startup_event():
-    """Initialize backend service"""
-    setup_logger()
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    logger.info("MRI-GIST Backend API started")
-    logger.info(f"Data directory: {DATA_DIR}")
+@app.get("/api/files", response_model=List[FileInfo])
+async def list_files(directory: Optional[str] = None):
+    """List MRI files in the data directory"""
+    files = []
+    extensions = {'.nii', '.nii.gz', '.nrrd'}
+
+    # 1. Search DATA_DIR (New Backend Data) - Served at /data
+    if DATA_DIR.exists():
+        for item in DATA_DIR.rglob("*"):
+            if item.is_file() and "".join(item.suffixes) in extensions:
+                 # items in subdirs need relative path from DATA_DIR
+                 rel_path = item.relative_to(DATA_DIR)
+                 files.append(FileInfo(
+                    name=item.name,
+                    path=str(item.absolute()), 
+                    url=f"/data/{rel_path}",
+                    size=item.stat().st_size,
+                    type="".join(item.suffixes)
+                ))
+
+    # 2. Search LEGACY_DATA_DIR (Old Visualization Data) - Served at /static/nrrd (since /static mounts parent)
+    if LEGACY_DATA_DIR.exists():
+        # LEGACY_DATA_DIR is .../static/nrrd
+        # We mount .../static at /static
+        # So file at .../static/nrrd/foo.nrrd is accessible at /static/nrrd/foo.nrrd
+        for item in LEGACY_DATA_DIR.rglob("*"):
+            if item.is_file() and "".join(item.suffixes) in extensions:
+                 rel_path = item.relative_to(LEGACY_DATA_DIR.parent) # relative to static/
+                 files.append(FileInfo(
+                    name=item.name,
+                    path=str(item.absolute()),
+                    url=f"/static/{rel_path}",
+                    size=item.stat().st_size,
+                    type="".join(item.suffixes)
+                ))
+
+    return files
+
+
 
 # Processing Endpoints
 @app.post("/api/process", response_model=ProcessingResponse)
@@ -484,6 +539,26 @@ def start_backend_server(
     logger.info(f"Starting MRI-GIST Backend API at http://{host}:{port}")
     logger.info(f"API Documentation: http://{host}:{port}/api/docs")
     
+    # Mount Data Directory
+    app.mount("/data", StaticFiles(directory=str(DATA_DIR)), name="data")
+
+    # Mount Legacy Static Directory to match frontend expectation of /static/nrrd
+    # LEGACY_DATA_DIR defined above acts as the root for this mount, or we mount the parent 'static'
+    legacy_static_root = Path.cwd() / "mri_gist" / "visualization" / "static"
+    if legacy_static_root.exists():
+         app.mount("/static", StaticFiles(directory=str(legacy_static_root)), name="legacy_static")
+
+    # Mount Frontend
+    # Assuming the structure: mri_gist/visualization/frontend/dist
+    # backend is in mri_gist/backend
+    frontend_dist = Path(__file__).parent.parent / "visualization" / "frontend" / "dist"
+    
+    if frontend_dist.exists():
+        logger.info(f"Serving frontend from {frontend_dist}")
+        app.mount("/", StaticFiles(directory=str(frontend_dist), html=True), name="frontend")
+    else:
+        logger.warning(f"Frontend build not found at {frontend_dist}")
+
     uvicorn.run(app, host=host, port=port)
 
 if __name__ == "__main__":

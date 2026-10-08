@@ -270,5 +270,17 @@ def serve(port, host):
     click.echo(f"Starting visualization server at http://{host}:{port}")
     start_server(host=host, port=port)
 
+@cli.command()
+@click.option('--port', default=8000, help='Port for backend API server')
+@click.option('--host', default='localhost', help='Host address')
+@click.option('--data-dir', default=None, help='Data directory for backend storage')
+def backend(port, host, data_dir):
+    """Launch backend API service for processing, analytics, and model serving"""
+    from mri_gist.backend.server import start_backend_server
+    
+    click.echo(f"Starting MRI-GIST Backend API at http://{host}:{port}")
+    click.echo(f"API Documentation: http://{host}:{port}/api/docs")
+    start_backend_server(host=host, port=port, data_dir=data_dir)
+
 if __name__ == '__main__':
     cli()

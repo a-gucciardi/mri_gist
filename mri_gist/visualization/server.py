@@ -81,14 +81,22 @@ async def trigger_segmentation(request: ProcessingRequest, background_tasks: Bac
 
     return {"status": "started", "job_type": "segmentation", "input": request.input_file}
 
-@app.get("/")
-async def read_index():
-    return FileResponse(Path(__file__).parent / "static" / "index.html")
+
 
 # Mount static files, must be after API routes to avoid masking them
-static_dir = Path(__file__).parent / "static"
-app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
-app.mount("/", StaticFiles(directory=str(static_dir), html=True), name="root")
+# Mount static files, must be after API routes to avoid masking them
+# serve the built frontend
+# Assuming server.py is in mri_gist/visualization and build is in mri_gist/visualization/frontend/dist
+static_dir = Path(__file__).parent / "frontend" / "dist"
+
+if static_dir.exists():
+    app.mount("/", StaticFiles(directory=str(static_dir), html=True), name="root")
+else:
+    logger.warning(f"Frontend build not found at {static_dir}. Please run 'npm run build' in frontend directory.")
+    # Fallback to old static if needed, or just warn
+    original_static = Path(__file__).parent / "static"
+    if original_static.exists():
+         app.mount("/", StaticFiles(directory=str(original_static), html=True), name="root_legacy")
 
 def start_server(host="localhost", port=8080, data_dir=None):
     """Launch the server programmatically"""
